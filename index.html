@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password rules visualizer</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="ui.css">
+
+</head>
+<body>
+	
+	<div class="form-wrapper">
+		<span class="heading">Select a password</span>
+		<div class="input-wrapper">
+			<label>Password</label>
+			<input class="password" type="password" />
+
+			<div class="popout">
+				<div class="popout-header">Must contain at least:</div>
+				<div class="popout-content">
+					<ul>
+						<li class="lower"><span class="indicator"></span>one lowercase letter: a-z</li>
+						<li class="upper"><span class="indicator"></span>one UPPERCASE letter: A-Z</li>
+						<li class="num"><span class="indicator"></span>a number: 0-9</li>
+						<li class="special"><span class="indicator"></span>a special character e.g !#@%</li>
+						<li class="count"><span class="indicator"></span>Minimum of 5 characters</li>
+					</ul>
+					<div class="feedback">Type in a great password</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="input-wrapper">
+			<label>Confirm password</label>
+			<input class="confirm-password" type="password" />
+			<div class="popout">
+				<div class="popout-header">Please repeat your password</div>
+				<div class="popout-content">
+					<ul>
+						<li class="confirm-check"><span class="indicator"></span>Must match the previous input</li>
+					</ul>
+					<div class="feedback-confirm"></div>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-success" disabled="true" type="submit">Submit</button>
+	</div>
+	<script src="pwd-visualizer.js"></script>
+	<script type="text/javascript">PasswordValidator('.password', '.confirm-password');</script>
+</body>
+</html>
